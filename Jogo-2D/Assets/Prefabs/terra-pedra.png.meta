@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd12f870da2735f4bbd127ff9b3d4ca5
+guid: 808b182dfdb263249ba60be1bfe0c49f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: terra-pedra 1_0
+      name: terra-pedra_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 265
+        y: 236
         width: 64
-        height: 35
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bef586ff4ab44a4cb6693781bed9e3b
-      internalID: -284089545
+      spriteID: e46a15ede9d463040967bec8b939367f
+      internalID: 408366947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terra-pedra 1_1
+      name: terra-pedra_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 265
+        y: 236
         width: 64
-        height: 35
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5816647ab661beb49b9eafd18749b62e
-      internalID: 780493607
+      spriteID: 29163d84497521c44b184260d6dd7414
+      internalID: 1210475079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terra-pedra 1_2
+      name: terra-pedra_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 265
+        y: 236
         width: 64
-        height: 35
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f003723284a3bd04b912b6c370385ee3
-      internalID: -181110909
+      spriteID: 7bf547f64df19804f9acfd0803df1cc2
+      internalID: 1868245292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terra-pedra 1_3
+      name: terra-pedra_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 230
+        y: 172
         width: 64
-        height: 35
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05f61bd80fa0ab34d8e25d6946dd9b30
-      internalID: 1599083757
+      spriteID: 83a94602c0c3a6f4e8200507bba239c4
+      internalID: 969491065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terra-pedra 1_4
+      name: terra-pedra_4
       rect:
         serializedVersion: 2
         x: 64
-        y: 230
+        y: 172
         width: 64
-        height: 35
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1c6513d1b19378438ffa16163d0da2d
-      internalID: -1644757863
+      spriteID: df8a00b6b49510b4b818e56c5dcec0d0
+      internalID: 1948409784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terra-pedra 1_5
+      name: terra-pedra_5
       rect:
         serializedVersion: 2
         x: 128
-        y: 230
+        y: 172
         width: 64
-        height: 35
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9efaa4dd77711a44f8b68952b68e0adb
-      internalID: 688341594
+      spriteID: a269c81de537c9a4fa62d471cde733e6
+      internalID: -1460564773
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      terra-pedra 1_0: -284089545
-      terra-pedra 1_1: 780493607
-      terra-pedra 1_2: -181110909
-      terra-pedra 1_3: 1599083757
-      terra-pedra 1_4: -1644757863
-      terra-pedra 1_5: 688341594
+      terra-pedra_0: 408366947
+      terra-pedra_1: 1210475079
+      terra-pedra_2: 1868245292
+      terra-pedra_3: 969491065
+      terra-pedra_4: 1948409784
+      terra-pedra_5: -1460564773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
