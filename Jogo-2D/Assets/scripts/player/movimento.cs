@@ -20,5 +20,10 @@ public class movimento : MonoBehaviour
 
         transform.Translate(horizontal, 0, 0);
 
+        if(Input.GetKey(KeyCode.Space))
+        {
+            Debug.Log("pulo");
+        }
+
     }
 }
