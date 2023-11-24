@@ -7,10 +7,12 @@ public class movimento : MonoBehaviour
     
 {
     public float speed;
-    // Start is called before the first frame update
+    public Transform ground;
+
+    private Rigidbody2D rig;
     void Start()
     {
-        
+        rig = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -22,8 +24,12 @@ public class movimento : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("pulo");
+            rig.AddForce(new Vector2(0, 1), ForceMode2D.Impulse);
         }
 
+        if(transform.position.y > ground.position.y + 5)
+        {
+            rig.AddForce(new Vector2(0, 0));
+        }
     }
 }
