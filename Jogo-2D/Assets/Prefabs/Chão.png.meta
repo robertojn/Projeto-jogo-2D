@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 447eb2435a620ff47bd8c5b1882f0041
+guid: e5a641893d986824fb27bd4d0358469a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Ch\xE3o 1_0"
+      name: "Ch\xE3o_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a06b987cb7093f4d91f83bc63e6e8c9
-      internalID: 84502774
+      spriteID: 3a29e2b0ab04fa64c883acd450bd725b
+      internalID: 860255700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ch\xE3o 1_1"
+      name: "Ch\xE3o_1"
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee015485fc09b624aaa66ee1e1f32214
-      internalID: 1604328701
+      spriteID: 98c2b9657ed8610469eb8ae6c66a1d8b
+      internalID: 1645412768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ch\xE3o 1_2"
+      name: "Ch\xE3o_2"
       rect:
         serializedVersion: 2
         x: 128
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b033362f5e1ecbd418bf1d279343b28c
-      internalID: -1592845890
+      spriteID: f63e6feda98cbb045b35da4b181ff8aa
+      internalID: -179682415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ch\xE3o 1_3"
+      name: "Ch\xE3o_3"
       rect:
         serializedVersion: 2
         x: 0
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7728dbc390ab8934bafb61ff1ff735ae
-      internalID: 1461181964
+      spriteID: 286b8cda50687784fa59c8d32d5f7245
+      internalID: -2047734050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ch\xE3o 1_4"
+      name: "Ch\xE3o_4"
       rect:
         serializedVersion: 2
         x: 64
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58a8f022ce96b5f49ae488b7f4f0d98b
-      internalID: 1836810543
+      spriteID: 0f825d4a7075eb64ebdfdc387ae76c1e
+      internalID: -301867434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Ch\xE3o 1_5"
+      name: "Ch\xE3o_5"
       rect:
         serializedVersion: 2
         x: 128
@@ -242,8 +242,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 503e7e47874ac724aa706dbd6727c832
-      internalID: 1623877621
+      spriteID: fd31fb9b80e8fcd42b3f4211b5b9e143
+      internalID: -828719982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ch\xE3o_6"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db82b54d91984f94c9a4eedd1ef81bf5
+      internalID: -1382746099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ch\xE3o_7"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 108
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11fbf5dc2dfcd5442ae9e43d4eae0256
+      internalID: -1329135223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ch\xE3o_8"
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 108
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d16ebf09e41c1245a874cde17b6ef63
+      internalID: -1018842767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ch\xE3o_9"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc8bc6001dd8f14f95a7415b7fd94ff
+      internalID: -1816198858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ch\xE3o_10"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 44
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5daa226872344d94a8dad944d3feedc2
+      internalID: -277858087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Ch\xE3o_11"
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 44
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4960f7f9f0a9c4d9260a74f20ebcef
+      internalID: 318416622
       vertices: []
       indices: 
       edges: []
@@ -259,12 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "Ch\xE3o 1_0": 84502774
-      "Ch\xE3o 1_1": 1604328701
-      "Ch\xE3o 1_2": -1592845890
-      "Ch\xE3o 1_3": 1461181964
-      "Ch\xE3o 1_4": 1836810543
-      "Ch\xE3o 1_5": 1623877621
+      "Ch\xE3o_0": 860255700
+      "Ch\xE3o_1": 1645412768
+      "Ch\xE3o_10": -277858087
+      "Ch\xE3o_11": 318416622
+      "Ch\xE3o_2": -179682415
+      "Ch\xE3o_3": -2047734050
+      "Ch\xE3o_4": -301867434
+      "Ch\xE3o_5": -828719982
+      "Ch\xE3o_6": -1382746099
+      "Ch\xE3o_7": -1329135223
+      "Ch\xE3o_8": -1018842767
+      "Ch\xE3o_9": -1816198858
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
