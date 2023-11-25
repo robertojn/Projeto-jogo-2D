@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class movimento : MonoBehaviour
@@ -7,12 +8,18 @@ public class movimento : MonoBehaviour
     
 {
     public float speed;
+    public float pulo;
     public Transform ground;
+    public SpriteRenderer flip;
+    public GameObject Pica;
 
     private Rigidbody2D rig;
+    public bool PodePular = true;
+    private float forçaG = 10;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        flip = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -22,14 +29,41 @@ public class movimento : MonoBehaviour
 
         transform.Translate(horizontal, 0, 0);
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && PodePular)
         {
-            rig.AddForce(new Vector2(0, 1), ForceMode2D.Impulse);
+            rig.velocity = new Vector2(rig.velocity.x, pulo);
         }
 
-        if(transform.position.y > ground.position.y + 5)
+        if(rig.velocity.y > 1)
         {
-            rig.AddForce(new Vector2(0, 0));
+            PodePular = false;
         }
+
+
+        if (horizontal < 0)
+        {
+            flip.flipX = false;
+            forçaG = -10;
+
+        }else if (horizontal > 0 )
+        {
+            flip.flipX = true;
+            forçaG = 10;
+        }    
+
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            GameObject Picareta = Instantiate(Pica, transform.position, Quaternion.identity); 
+            Rigidbody2D rigPica = Picareta.GetComponent<Rigidbody2D>();
+
+            rigPica.AddForce(new Vector2(forçaG, 0), ForceMode2D.Impulse);
+        }    
     }
+    private void OnCollisionEnter2D(Collision2D Coll)
+        {
+            if(Coll.gameObject.tag == "chao")
+            {
+                PodePular = true;
+            }
+        }
 }
