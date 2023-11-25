@@ -12,6 +12,8 @@ public class movimento : MonoBehaviour
     public Transform ground;
     public SpriteRenderer flip;
     public GameObject Pica;
+    public Transform ParedeCheck;
+    public LayerMask LayerParede;
 
     private Rigidbody2D rig;
     public bool PodePular = true;
@@ -23,11 +25,12 @@ public class movimento : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 
-        transform.Translate(horizontal, 0, 0);
+        
+            transform.Translate(horizontal, 0, 0);
 
         if(Input.GetKeyDown(KeyCode.Space) && PodePular)
         {
@@ -60,10 +63,15 @@ public class movimento : MonoBehaviour
         }    
     }
     private void OnCollisionEnter2D(Collision2D Coll)
+    {
+        if(Coll.gameObject.tag == "chao")
         {
-            if(Coll.gameObject.tag == "chao")
-            {
-                PodePular = true;
-            }
+            PodePular = true;
         }
+    }
+
+    /*private bool ParedeCol()
+    {
+        return Physics2D.OverlapCircle(ParedeCheck.position, 0.1f, LayerParede);
+    }*/
 }
