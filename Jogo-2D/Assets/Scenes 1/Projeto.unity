@@ -364,15 +364,7 @@ MonoBehaviour:
   PontosVerde: 25
   PontosVermelho: 50
   PontosAzul: 100
-  cristais:
-  - {fileID: 1800353362}
-  - {fileID: 273164759}
-  - {fileID: 1698230586}
-  - {fileID: 1265905224}
-  - {fileID: 1739823613}
-  - {fileID: 969513355}
-  - {fileID: 893613096}
-  - {fileID: 1387255939}
+  cristais: []
 --- !u!1 &97845245
 GameObject:
   m_ObjectHideFlags: 0

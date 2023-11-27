@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AddComp : MonoBehaviour
@@ -7,11 +8,17 @@ public class AddComp : MonoBehaviour
     public int PontosVerde;
     public int PontosVermelho;
     public int PontosAzul;
-    public GameObject[] cristais;
+    public List<Transform> cristais;
 
     void Start()
     {
-       foreach(GameObject cris in cristais)
+       for(int i = 0; i < transform.childCount; i++)
+       {
+            cristais.Add(gameObject.transform.GetChild(i));
+       }
+
+
+       foreach(Transform cris in cristais)
        {
             cris.AddComponent<BoxCollider2D>().isTrigger = true;
             cris.AddComponent<pontos>();
