@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int player;
     public float count = 0;
     public float speed;
     public float pulo;
@@ -52,8 +53,17 @@ public class Player : MonoBehaviour
     }
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        transform.Translate(horizontal, 0, 0);
+        float horizontal = 0;
+        if(player == 1)
+        {
+            horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            transform.Translate(horizontal, 0, 0);
+        } 
+        else if(player == 2)
+        {
+            horizontal = Input.GetAxis("Horizontal2") * speed * Time.deltaTime;
+            transform.Translate(horizontal, 0, 0);
+        }
 
         if(rig.velocity.x == 0)
         {
