@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float pulo;
     public float TempoAnim;
+    public float dinheiro = 500;
     public SpriteRenderer flip;
     public GameObject Pica;
     public Transform groundCheck;
@@ -23,7 +24,6 @@ public class Player : MonoBehaviour
     private bool PodePular = true;
     private bool dançando = false;
     private float forçaG = 10;
-    private float dinheiro = 500;
     private float Jogar = 0;
     void Start()
     {
