@@ -80,9 +80,10 @@ public class Player : MonoBehaviour
         if(rig.velocity.y > 1)
         {
             PodePular = false;
+            anim.SetBool("Pulou", true);
         }
 
-        if(horizontal != 0)
+        if(horizontal != 0 && PodePular)
         {
             anim.SetBool("Andar", true);
             anim.SetBool("Dance", false);
@@ -106,8 +107,10 @@ public class Player : MonoBehaviour
         if(chaoCol())
         {
             PodePular = true;
+            anim.SetBool("Pulou", false);
         }  
     }
+
     private bool chaoCol()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.5f, LayerParede);

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 43e185d4c156f8741b14daf1ec613a2a
+guid: dda9acd4bd4a5f94db67ded001d3d707
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: anaozinhoIdle_0
+      name: anaozinhoJump_0
       rect:
         serializedVersion: 2
         x: 7
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dc0ee13008402247ab6e33005cc772f
-      internalID: -2060406045
+      spriteID: 0074e4b781db87c4fab907c05d110f86
+      internalID: -235518978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anaozinhoIdle_1
+      name: anaozinhoJump_1
       rect:
         serializedVersion: 2
         x: 39
         y: 5
         width: 18
-        height: 22
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,19 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce2cb33664a0ad54fbcd5bb23894a790
-      internalID: -1078376598
+      spriteID: e9f7a2cddbe278248b1670c60e152cf1
+      internalID: -1322109445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anaozinhoIdle_2
+      name: anaozinhoJump_2
       rect:
         serializedVersion: 2
-        x: 72
+        x: 71
         y: 5
-        width: 16
+        width: 17
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,19 +179,166 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f0fc97c95a42e5419583d8c8ab31966
-      internalID: 1477325165
+      spriteID: 75fe30ca892e34348b4404734705f55b
+      internalID: -781343785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anaozinhoIdle_3
+      name: anaozinhoJump_3
       rect:
         serializedVersion: 2
-        x: 105
+        x: 102
+        y: 6
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d275f431c449dbb4c957c6fc3f8bb274
+      internalID: 819853642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoJump_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 9
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ffd82e16d25e948a55887e8a469fb4
+      internalID: -2100996902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoJump_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 10
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713790997966d854097d4ae9c2e36ecf
+      internalID: 1247955392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoJump_6
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 11
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bee65da2073774ba855dce7b71a800
+      internalID: 356383626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoJump_7
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 10
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296daaaeb86be444d8f69dcadcf48530
+      internalID: -125334995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoJump_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 9
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f63448e7e09a7498b00f5c97521eb7
+      internalID: -1770728034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoJump_9
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 6
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28dd9a33c0d4b714b94a956e54bb7d57
+      internalID: -2080624252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoJump_10
+      rect:
+        serializedVersion: 2
+        x: 327
         y: 5
-        width: 14
+        width: 17
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -200,20 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d20aaf26ebd290e40a7f2990b63b170d
-      internalID: -994386236
+      spriteID: 2d051e17391a7804fb5d51fa01350986
+      internalID: 911373314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anaozinhoIdle_4
+      name: anaozinhoJump_11
       rect:
         serializedVersion: 2
-        x: 136
+        x: 359
         y: 5
-        width: 16
-        height: 22
+        width: 18
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,17 +368,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42393248de68c5244958c4019aebc33a
-      internalID: -700864492
+      spriteID: 5c3e71e80e715664a903d090946f256d
+      internalID: -121945534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anaozinhoIdle_5
+      name: anaozinhoJump_12
       rect:
         serializedVersion: 2
-        x: 167
+        x: 391
         y: 5
         width: 18
         height: 22
@@ -242,281 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a8fb4d504dcb8a46a7effe380027d9f
-      internalID: 1555681336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_6
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0306dc34b702a7f42bf0c73803c61456
-      internalID: -1259897559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_7
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63491004c9fd312428d7268a90953338
-      internalID: -770762031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_8
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d819d612bb695c44cbcdebe8e3db21a2
-      internalID: -1266895776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_9
-      rect:
-        serializedVersion: 2
-        x: 295
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d195ee9d492ff26439336445dff4e5aa
-      internalID: 1124432431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_10
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 5
-        width: 16
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57a2f769e969816448fe744d01210308
-      internalID: 559144555
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_11
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 5
-        width: 16
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f55462dce11441f47b9a3f971cb1dbb9
-      internalID: 1919606407
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_12
-      rect:
-        serializedVersion: 2
-        x: 393
-        y: 5
-        width: 14
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8d3735a108f069468c276781fe07678
-      internalID: -446502632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_13
-      rect:
-        serializedVersion: 2
-        x: 424
-        y: 5
-        width: 16
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fada03ee012ddb548a5025767418acc8
-      internalID: -87914188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_14
-      rect:
-        serializedVersion: 2
-        x: 455
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20bc465756a34ae43959da4346c47c2d
-      internalID: -207284860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_15
-      rect:
-        serializedVersion: 2
-        x: 487
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a15c8998a31229d4d9bd0e7272d8d28c
-      internalID: 359135606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_16
-      rect:
-        serializedVersion: 2
-        x: 519
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 580baf344ae501540a6a8ce61f252a39
-      internalID: 773733372
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_17
-      rect:
-        serializedVersion: 2
-        x: 551
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61bd2fc317dee6e4a81e82580145af79
-      internalID: -488657147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: anaozinhoIdle_18
-      rect:
-        serializedVersion: 2
-        x: 583
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68fbc5e0f74eaf548acffe040f29b13f
-      internalID: 1984087201
+      spriteID: 7a8fd60ebab21ca42a49192f0e239990
+      internalID: -2042417174
       vertices: []
       indices: 
       edges: []
@@ -532,25 +406,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      anaozinhoIdle_0: -2060406045
-      anaozinhoIdle_1: -1078376598
-      anaozinhoIdle_10: 559144555
-      anaozinhoIdle_11: 1919606407
-      anaozinhoIdle_12: -446502632
-      anaozinhoIdle_13: -87914188
-      anaozinhoIdle_14: -207284860
-      anaozinhoIdle_15: 359135606
-      anaozinhoIdle_16: 773733372
-      anaozinhoIdle_17: -488657147
-      anaozinhoIdle_18: 1984087201
-      anaozinhoIdle_2: 1477325165
-      anaozinhoIdle_3: -994386236
-      anaozinhoIdle_4: -700864492
-      anaozinhoIdle_5: 1555681336
-      anaozinhoIdle_6: -1259897559
-      anaozinhoIdle_7: -770762031
-      anaozinhoIdle_8: -1266895776
-      anaozinhoIdle_9: 1124432431
+      anaozinhoJump_0: -235518978
+      anaozinhoJump_1: -1322109445
+      anaozinhoJump_10: 911373314
+      anaozinhoJump_11: -121945534
+      anaozinhoJump_12: -2042417174
+      anaozinhoJump_2: -781343785
+      anaozinhoJump_3: 819853642
+      anaozinhoJump_4: -2100996902
+      anaozinhoJump_5: 1247955392
+      anaozinhoJump_6: 356383626
+      anaozinhoJump_7: -125334995
+      anaozinhoJump_8: -1770728034
+      anaozinhoJump_9: -2080624252
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
