@@ -48,9 +48,17 @@ public class sacolao : MonoBehaviour
         {
             bag.sprite = estado[1];
         }
-        else if(script.dinheiro >= 1500)
+        else if(script.dinheiro < 2000)
         {
             bag.sprite = estado[2];
+        }
+        else if(script.dinheiro < 2500)
+        {
+            bag.sprite = estado[3];
+        }
+        else if(script.dinheiro >= 2500)
+        {
+            bag.sprite = estado[4];
         }
         
     }

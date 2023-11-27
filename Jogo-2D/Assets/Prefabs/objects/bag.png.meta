@@ -126,19 +126,19 @@ TextureImporter:
       name: bag_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
+        x: 20
+        y: 16
         width: 24
-        height: 28
+        height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b9bb1876c2170a4098372fcb75d84f8
-      internalID: -361786139
+      spriteID: 020621e17c83c0449808b533ee4a76b4
+      internalID: -1089153692
       vertices: []
       indices: 
       edges: []
@@ -147,19 +147,19 @@ TextureImporter:
       name: bag_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 4
+        x: 84
+        y: 16
         width: 24
-        height: 28
+        height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2931401b86caf2049a7d52905bfb6f3c
-      internalID: 897770274
+      spriteID: 7976ff815ab0e22499bc96c6a8e15fd5
+      internalID: 1355262697
       vertices: []
       indices: 
       edges: []
@@ -168,19 +168,61 @@ TextureImporter:
       name: bag_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 4
+        x: 148
+        y: 16
         width: 24
-        height: 28
+        height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf005c45abcd375479825200f07acd21
-      internalID: 1432104401
+      spriteID: 3b1aa7ed56fc5294090137423de23ac5
+      internalID: 789867713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bag_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 16
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e29627db282e94bb3f88e695326c9e
+      internalID: 1727178395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bag_4
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 16
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72fd467a264faf84a92aa58d14a8429d
+      internalID: -1563909102
       vertices: []
       indices: 
       edges: []
@@ -196,9 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bag_0: -361786139
-      bag_1: 897770274
-      bag_2: 1432104401
+      bag_0: -1089153692
+      bag_1: 1355262697
+      bag_2: 789867713
+      bag_3: 1727178395
+      bag_4: -1563909102
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
