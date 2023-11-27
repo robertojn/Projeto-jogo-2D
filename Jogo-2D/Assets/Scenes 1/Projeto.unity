@@ -1259,8 +1259,9 @@ MonoBehaviour:
   LayerParede:
     serializedVersion: 2
     m_Bits: 128
-  controles: 010100000201000003010000
   Score: {fileID: 1136628173}
+  controles: 010100000201000003010000
+  efeitos: []
 --- !u!212 &654307116
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33929,8 +33930,10 @@ MonoBehaviour:
   LayerParede:
     serializedVersion: 2
     m_Bits: 128
-  controles: 200000006700000031000000
   Score: {fileID: 1181306360}
+  controles: 200000006700000031000000
+  efeitos:
+  - {fileID: 1182778168333737714, guid: b4c8bdc568de4a340bb6729640bf6baf, type: 3}
 --- !u!212 &2123812241
 SpriteRenderer:
   m_ObjectHideFlags: 0

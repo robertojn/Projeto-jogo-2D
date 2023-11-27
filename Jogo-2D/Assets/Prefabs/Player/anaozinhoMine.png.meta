@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d39e9e60bcd68674e87489def18a93a0
+guid: 3f29fbdddf8192e45bb6ee0473d38d46
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bag_0
+      name: anaozinhoMine_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 24
-        height: 28
+        x: 7
+        y: 5
+        width: 18
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b9bb1876c2170a4098372fcb75d84f8
-      internalID: -361786139
+      spriteID: f035a77e9b53ca043869e90c5a9a57c8
+      internalID: 110700120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bag_1
+      name: anaozinhoMine_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 4
-        width: 24
-        height: 28
+        x: 38
+        y: 5
+        width: 19
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2931401b86caf2049a7d52905bfb6f3c
-      internalID: 897770274
+      spriteID: ad52001708d3ca14381a79087bec6a9d
+      internalID: -105217822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bag_2
+      name: anaozinhoMine_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 4
-        width: 24
-        height: 28
+        x: 69
+        y: 5
+        width: 20
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf005c45abcd375479825200f07acd21
-      internalID: 1432104401
+      spriteID: 26d76124075af0740a57bba508fdfbbd
+      internalID: -672204102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoMine_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 5
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8397d6ccdfffec74ba7fa4643e6d59f3
+      internalID: 794811809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoMine_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 5
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80653118b576f34d939fa34bd7cf192
+      internalID: 398517492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoMine_5
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 5
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33a13522566cf14cbefdee3c6c702f7
+      internalID: 1948298269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoMine_6
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 5
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e65943b3980c5a418915634a117d4be
+      internalID: 1445729941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoMine_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 5
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24fa0824bc02a7469296c7e8b813b5c
+      internalID: -636616738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anaozinhoMine_8
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 5
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73b963e752f7da4a9d238a675fcce7e
+      internalID: 1335807357
       vertices: []
       indices: 
       edges: []
@@ -196,9 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bag_0: -361786139
-      bag_1: 897770274
-      bag_2: 1432104401
+      anaozinhoMine_0: 110700120
+      anaozinhoMine_1: -105217822
+      anaozinhoMine_2: -672204102
+      anaozinhoMine_3: 794811809
+      anaozinhoMine_4: 398517492
+      anaozinhoMine_5: 1948298269
+      anaozinhoMine_6: 1445729941
+      anaozinhoMine_7: -636616738
+      anaozinhoMine_8: 1335807357
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

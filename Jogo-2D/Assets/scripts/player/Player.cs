@@ -16,8 +16,9 @@ public class Player : MonoBehaviour
     public GameObject Pica;
     public Transform groundCheck;
     public LayerMask LayerParede;
-    public KeyCode[] controles;
     public TextMeshProUGUI Score;
+    public KeyCode[] controles;
+    public GameObject[] efeitos;
 
     private Rigidbody2D rig;
     private Animator anim;
@@ -58,6 +59,13 @@ public class Player : MonoBehaviour
             }
         } else {
             Jogar = 0;
+        }
+
+        if(Input.GetKeyDown(controles[1]))
+        {
+            anim.SetBool("Golpe", true);
+        } else {
+            anim.SetBool("Golpe", false);
         }
 
         if(Input.GetKeyDown(controles[2]))
@@ -137,6 +145,11 @@ public class Player : MonoBehaviour
     {
         anim.SetBool("Idle", false);
         count = 0;
+    }
+
+    public void EfeitoGolpe()
+    {
+        Instantiate(efeitos[0], transform.position + new Vector3(0.4f,-0.1f,0), Quaternion.identity);
     }
 
     public void addDinheiro(int pontos)
