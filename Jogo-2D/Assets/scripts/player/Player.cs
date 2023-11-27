@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,12 +16,15 @@ public class Player : MonoBehaviour
     public Transform groundCheck;
     public LayerMask LayerParede;
     public KeyCode[] controles;
+    public TextMeshProUGUI Score;
 
     private Rigidbody2D rig;
     private Animator anim;
     private bool PodePular = true;
     private bool dançando = false;
     private float forçaG = 10;
+    private float dinheiro = 500;
+    private float Jogar = 0;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -32,18 +36,29 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        Score.text = "Score: " + dinheiro + "g";
+        
+
         if(Input.GetKeyDown(controles[0]) && PodePular)
         {
             rig.velocity = new Vector2(rig.velocity.x, pulo);
         }
 
-        if(Input.GetKeyDown(controles[1]))
+        if(Input.GetKey(controles[1]))
         {
-            GameObject Picareta = Instantiate(Pica, transform.position, Quaternion.identity); 
-            Rigidbody2D rigPica = Picareta.GetComponent<Rigidbody2D>();
+            Jogar += 2 * Time.deltaTime;
 
-            rigPica.AddForce(new Vector2(forçaG, 0), ForceMode2D.Impulse);
-        } 
+            if(Jogar >= 3)
+            {
+                GameObject Picareta = Instantiate(Pica, transform.position, Quaternion.identity); 
+                Rigidbody2D rigPica = Picareta.GetComponent<Rigidbody2D>();
+
+                rigPica.AddForce(new Vector2(forçaG, 0), ForceMode2D.Impulse);
+                Jogar = 0;
+            }
+        } else {
+            Jogar = 0;
+        }
 
         if(Input.GetKeyDown(controles[2]))
         {
@@ -108,7 +123,9 @@ public class Player : MonoBehaviour
         {
             PodePular = true;
             anim.SetBool("Pulou", false);
-        }  
+        }  else {
+            PodePular = false;
+        }
     }
 
     private bool chaoCol()
@@ -120,5 +137,10 @@ public class Player : MonoBehaviour
     {
         anim.SetBool("Idle", false);
         count = 0;
+    }
+
+    public void addDinheiro(int pontos)
+    {
+        dinheiro += pontos;
     }
 }
