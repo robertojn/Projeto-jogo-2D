@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public SpriteRenderer flip;
     public GameObject Pica;
     public Transform groundCheck;
+    public Transform ParedeCheck;
     public LayerMask LayerParede;
     public TextMeshProUGUI Score;
     public KeyCode[] controles;
@@ -131,14 +132,27 @@ public class Player : MonoBehaviour
         {
             PodePular = true;
             anim.SetBool("Pulou", false);
-        }  else {
+        }  
+        else {
             PodePular = false;
+        }
+
+        if(ParedeCol())
+        {
+            anim.SetBool("Parede", true);
+            PodePular = true;
+        } else {
+            anim.SetBool("Parede", false);
         }
     }
 
     private bool chaoCol()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.5f, LayerParede);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, LayerParede);
+    }
+    private bool ParedeCol()
+    {
+       return Physics2D.OverlapCircle(ParedeCheck.position, 0.2f, LayerParede);
     }
 
     public void Animou()
