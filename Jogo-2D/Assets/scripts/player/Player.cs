@@ -166,11 +166,13 @@ public class Player : MonoBehaviour
         if(flip.flipX)
         {
             efeitos[0].GetComponent<SpriteRenderer>().flipX = true;
-            Instantiate(efeitos[0], transform.position + new Vector3(0.4f,-0.1f,0), Quaternion.identity);
+            GameObject golpe=Instantiate(efeitos[0], transform.position + new Vector3(0.4f,-0.1f,0), Quaternion.identity); 
+            golpe.transform.SetParent(gameObject.transform);         
         }
         else {
             efeitos[0].GetComponent<SpriteRenderer>().flipX = false;
-            Instantiate(efeitos[0], transform.position - new Vector3(0.4f,+0.1f,0), Quaternion.identity);
+            GameObject golpe=Instantiate(efeitos[0], transform.position - new Vector3(0.4f,+0.1f,0), Quaternion.identity);
+            golpe.transform.SetParent(gameObject.transform);
         }
     }
 

@@ -19,14 +19,24 @@ public class pontos : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if(col.gameObject.tag == "player")
-        {
-            Player script = col.GetComponent<Player>();
-            if(Input.GetKeyDown(script.controles[1]))
+        if(col.gameObject.tag == "efeito")
+        
             {
-                script.addDinheiro(Pontos);
+                Player valor = col.GetComponentInParent<Player>();
+                Rigidbody2D Rig = col.GetComponentInParent<Rigidbody2D>();
+                Transform Posi = col.GetComponentInParent<Transform>();
+                SpriteRenderer personagem = col.GetComponentInParent<SpriteRenderer>();
+
+                if(personagem.flipX == true)
+                {
+                Rig.AddForce(new Vector2(Posi.position.x-100,Posi.position.y));
+                
+                }else 
+                {
+                   Rig.AddForce(new Vector2(Posi.position.x+100,Posi.position.y));
+                }
+                valor.addDinheiro(Pontos);
                 Destroy(gameObject);
             }
-        }
     }
 }
