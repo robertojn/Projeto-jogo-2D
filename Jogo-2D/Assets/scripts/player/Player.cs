@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
                 GameObject Picareta = Instantiate(Pica, transform.position, Quaternion.identity); 
                 Rigidbody2D rigPica = Picareta.GetComponent<Rigidbody2D>();
 
-                rigPica.AddForce(new Vector2(forçaG, 0), ForceMode2D.Impulse);
+                rigPica.AddForce(new Vector2(forçaG, forçaG), ForceMode2D.Impulse);
                 Jogar = 0;
             }
         } else {
@@ -166,13 +166,11 @@ public class Player : MonoBehaviour
         if(flip.flipX)
         {
             efeitos[0].GetComponent<SpriteRenderer>().flipX = true;
-            GameObject golpe=Instantiate(efeitos[0], transform.position + new Vector3(0.4f,-0.1f,0), Quaternion.identity); 
-            golpe.transform.SetParent(gameObject.transform);         
+            GameObject golpe = Instantiate(efeitos[0], transform.position + new Vector3(0.4f,-0.1f,0), Quaternion.identity);
         }
         else {
             efeitos[0].GetComponent<SpriteRenderer>().flipX = false;
-            GameObject golpe=Instantiate(efeitos[0], transform.position - new Vector3(0.4f,+0.1f,0), Quaternion.identity);
-            golpe.transform.SetParent(gameObject.transform);
+            Instantiate(efeitos[0], transform.position - new Vector3(0.4f,+0.1f,0), Quaternion.identity);
         }
     }
 
