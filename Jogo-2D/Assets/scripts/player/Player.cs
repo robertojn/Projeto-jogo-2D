@@ -25,8 +25,10 @@ public class Player : MonoBehaviour
     private Animator anim;
     private bool PodePular = true;
     private bool dançando = false;
+    private bool PodeJogar = false;
     private float forçaG = 10;
-    private float Jogar = 0;
+    public float Jogar = 0;
+    public float TempoJogar = 0;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -48,18 +50,24 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(controles[1]))
         {
-            Jogar += 2 * Time.deltaTime;
+            TempoJogar += 2 * Time.deltaTime;
+            Jogar += 2*Time.deltaTime;
 
-            if(Jogar >= 3)
+            if(TempoJogar >= 3)
             {
-                GameObject Picareta = Instantiate(Pica, transform.position, Quaternion.identity); 
-                Rigidbody2D rigPica = Picareta.GetComponent<Rigidbody2D>();
-
-                rigPica.AddForce(new Vector2(forçaG, forçaG), ForceMode2D.Impulse);
-                Jogar = 0;
+                PodeJogar = true;
             }
         } else {
-            Jogar = 0;
+            TempoJogar = 0;
+        }
+
+        if(Input.GetKeyUp(controles[1]) && PodeJogar)
+        {
+            GameObject Picareta = Instantiate(Pica, transform.position, Quaternion.identity); 
+            Rigidbody2D rigPica = Picareta.GetComponent<Rigidbody2D>();
+
+            rigPica.AddForce(new Vector2(forçaG, 1*Jogar), ForceMode2D.Impulse);
+            PodeJogar = false;
         }
 
         if(Input.GetKeyDown(controles[1]))
@@ -167,15 +175,30 @@ public class Player : MonoBehaviour
         {
             efeitos[0].GetComponent<SpriteRenderer>().flipX = true;
             GameObject golpe = Instantiate(efeitos[0], transform.position + new Vector3(0.4f,-0.1f,0), Quaternion.identity);
+            golpe.transform.SetParent(gameObject.transform);
         }
         else {
             efeitos[0].GetComponent<SpriteRenderer>().flipX = false;
-            Instantiate(efeitos[0], transform.position - new Vector3(0.4f,+0.1f,0), Quaternion.identity);
+            GameObject golpe = Instantiate(efeitos[0], transform.position - new Vector3(0.4f,+0.1f,0), Quaternion.identity);
+            golpe.transform.SetParent(gameObject.transform);
         }
     }
 
     public void addDinheiro(int pontos)
     {
         dinheiro += pontos;
+    }
+
+    public void perderDinheiro(int quantidade)
+    {
+        dinheiro -= quantidade;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "efeito")
+        {
+            perderDinheiro(50);
+        }
     }
 }
