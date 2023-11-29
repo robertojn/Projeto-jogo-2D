@@ -13,15 +13,17 @@ public class Monstro : MonoBehaviour
     private Transform pos;
     private SpriteRenderer skin;
     private Rigidbody2D rig;
+    private Animator anim;
     private bool Vendo = false;
     private float TempoVer = 5f;
-    public float count = 0;
+    private float count = 0;
     // Start is called before the first frame update
     void Start()
     {
         pos = GetComponent<Transform>();
         skin = GetComponent<SpriteRenderer>();
         rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class Monstro : MonoBehaviour
             {
                 rig.velocity = new Vector2(rig.velocity.x, 10f);
             }
+            anim.SetBool("Andar", true);
         }
 
         if(!Vendo && Player != null)
@@ -64,6 +67,7 @@ public class Monstro : MonoBehaviour
         {
             Player = null;
             count = TempoVer;
+            anim.SetBool("Andar", false);
         }
     }
 
