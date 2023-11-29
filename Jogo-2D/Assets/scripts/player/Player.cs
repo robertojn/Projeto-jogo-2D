@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI Score;
     public KeyCode[] controles;
     public GameObject[] efeitos;
+    public Camera cam;
 
     private Rigidbody2D rig;
     private Animator anim;
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     private bool PodeJogar = false;
     private float forçaG = 10;
     public float Jogar = 0;
-    public float TempoJogar = 0;
+    private float TempoJogar = 0;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -41,7 +42,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Score.text = "Score: " + dinheiro + "g";
-        
 
         if(Input.GetKeyDown(controles[0]) && PodePular)
         {
@@ -53,9 +53,11 @@ public class Player : MonoBehaviour
             TempoJogar += 2 * Time.deltaTime;
             Jogar += 2*Time.deltaTime;
 
-            if(TempoJogar >= 3)
+            if(TempoJogar >= 1)
             {
                 PodeJogar = true;
+                anim.SetBool("Jogou", true);
+                cam.orthographicSize += 1*Time.deltaTime;
             }
         } else {
             TempoJogar = 0;
@@ -66,8 +68,10 @@ public class Player : MonoBehaviour
             GameObject Picareta = Instantiate(Pica, transform.position, Quaternion.identity); 
             Rigidbody2D rigPica = Picareta.GetComponent<Rigidbody2D>();
 
-            rigPica.AddForce(new Vector2(forçaG, 1*Jogar), ForceMode2D.Impulse);
+            rigPica.AddForce(new Vector2(forçaG, 2*Jogar), ForceMode2D.Impulse);
+            anim.SetBool("Jogou", false);
             PodeJogar = false;
+            Jogar = 0;
         }
 
         if(Input.GetKeyDown(controles[1]))
@@ -81,6 +85,25 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("Dance", true);
             dançando = true;
+        }
+
+        if(Jogar > 10)
+        {
+            Jogar = 10;
+        }
+
+        if(cam.orthographicSize > 7)
+        {
+            cam.orthographicSize = 7;
+        } 
+        else if(cam.orthographicSize < 5)
+        {
+            cam.orthographicSize = 5;
+        }
+
+        if(cam.orthographicSize > 5 && !PodeJogar)
+        {
+            cam.orthographicSize -= 2*Time.deltaTime;
         }
     }
     void FixedUpdate()
