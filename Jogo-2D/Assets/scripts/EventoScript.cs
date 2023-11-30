@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EventoScript : MonoBehaviour
 {
+    public Dictionary<string, float> placar = new Dictionary<string, float>();
+    public List<GameObject> jog = new List<GameObject>();
     public GameObject[] Players;
     public bool UmApenas = false;
     // Start is called before the first frame update
@@ -17,9 +20,17 @@ public class EventoScript : MonoBehaviour
     {
         foreach(GameObject jogadores in Players)
         {
+            if(!jog.Contains(jogadores))
+            {
+                jog.Add(jogadores);
+            }
+        }
+
+        foreach(GameObject jogadores in jog.ToList())
+        {
             if(jogadores == null)
             {
-                UmApenas = true;
+                jog.Remove(jogadores);
             }
 
             if(jogadores != null && UmApenas)
@@ -45,5 +56,23 @@ public class EventoScript : MonoBehaviour
                 cam.rect = new Rect(x, cam.rect.y, cam.rect.width, cam.rect.height);
             }
         }
+
+        if(jog.Count < Players.Length)
+        {
+            UmApenas = true;
+        }
+
+        if(jog.Count < 1)
+        {
+            var primeiro = Vencedor(placar);
+            Debug.Log(primeiro.Key);
+        }
+    }
+
+     static KeyValuePair<string, float> Vencedor(Dictionary<string, float> placar)
+    {
+        var Jogadores = placar.OrderByDescending(x => x.Value);
+        var primeiro = Jogadores.First();
+        return primeiro;
     }
 }
