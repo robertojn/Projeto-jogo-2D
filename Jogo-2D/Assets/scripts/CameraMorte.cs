@@ -25,6 +25,6 @@ public class CameraMorte : MonoBehaviour
         
         cam.rect = new Rect(x, cam.rect.y, cam.rect.width, cam.rect.height);
         
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 1.5f);
     }
 }

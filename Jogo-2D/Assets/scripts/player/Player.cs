@@ -219,6 +219,8 @@ public class Player : MonoBehaviour
         if(Vida <= 0)
         {
             Destroy(gameObject);
+            cam.transform.SetParent(null);
+            cam.AddComponent<CameraMorte>();
         }
     }
 
@@ -244,12 +246,6 @@ public class Player : MonoBehaviour
                 rig.AddForce(new Vector2(rig.velocity.x + 200,rig.velocity.y));
             }
         }
-    }
-
-    void OnDestroy()
-    {
-        cam.transform.SetParent(null);
-        cam.AddComponent<CameraMorte>();
     }
 
     private IEnumerator TempoDano()
