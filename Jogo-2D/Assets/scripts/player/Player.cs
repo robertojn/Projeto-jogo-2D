@@ -7,6 +7,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int player;
+    public int Vida;
     public float count = 0;
     public float speed;
     public float pulo;
@@ -210,6 +211,14 @@ public class Player : MonoBehaviour
     public void addDinheiro(int pontos)
     {
         dinheiro += pontos;
+    }
+    public void perderVida(int Dano)
+    {
+        Vida -= Dano;
+        if(Vida <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void perderDinheiro(int quantidade)
