@@ -88,24 +88,22 @@ public class Monstro : MonoBehaviour
                 skin.flipX = true;
             }
 
-            if(skin.flipX == false)
+            float distancia = Vector3.Distance(Player.position, pos.position);
+            if(distancia < 0.5 && !Atacou)
             {
-                if(Player.position.x < pos.position.x + 0.5 && !Atacou)
+                if(skin.flipX == false)
                 {
-                    Efeito.GetComponent<SpriteRenderer>().flipX = true;
-                    GameObject golpe = Instantiate(Efeito, transform.position + new Vector3(0.5f,-0.1f,0), Quaternion.identity);
-                    golpe.transform.SetParent(gameObject.transform);
-                    Atacou = true;
-                    StartCoroutine(tempoAtacar());
-                }
-            } else {
-                if(Player.position.x > pos.position.x - 0.5 && !Atacou)
-                {
-                    Efeito.GetComponent<SpriteRenderer>().flipX = false;
-                    GameObject golpe = Instantiate(Efeito, transform.position - new Vector3(0.5f,+0.1f,0), Quaternion.identity);
-                    golpe.transform.SetParent(gameObject.transform);
-                    Atacou = true;
-                    StartCoroutine(tempoAtacar());
+                Efeito.GetComponent<SpriteRenderer>().flipX = true;
+                GameObject golpe = Instantiate(Efeito, transform.position + new Vector3(0.5f,-0.1f,0), Quaternion.identity);
+                golpe.transform.SetParent(gameObject.transform);
+                Atacou = true;
+                StartCoroutine(tempoAtacar());
+                } else {
+                Efeito.GetComponent<SpriteRenderer>().flipX = false;
+                GameObject golpe = Instantiate(Efeito, transform.position - new Vector3(0.5f,+0.1f,0), Quaternion.identity);
+                golpe.transform.SetParent(gameObject.transform);
+                Atacou = true;
+                StartCoroutine(tempoAtacar());
                 }
             }
 
@@ -132,10 +130,6 @@ public class Monstro : MonoBehaviour
     public void perderVida(int dano)
     {
         Vida -= dano;
-        if(Vida <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     private bool chaoCol()
@@ -156,6 +150,8 @@ public class Monstro : MonoBehaviour
         } 
         else if(colide.gameObject.tag == "efeito")
         {
+            if(colide.transform.parent.tag == "player")
+            {
             int dano = colide.GetComponent<efeito>().dan;
             perderVida(dano);
             StartCoroutine(receberDano());
@@ -173,6 +169,8 @@ public class Monstro : MonoBehaviour
             {
                 Player script = colide.GetComponentInParent<Player>();
                 script.addDinheiro(Pontos);
+                Destroy(gameObject);
+            }
             }
         }
 
