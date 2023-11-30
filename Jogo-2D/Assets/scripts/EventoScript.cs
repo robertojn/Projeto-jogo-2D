@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.Mathematics;
+using TMPro.Examples;
 using UnityEngine;
 
 public class EventoScript : MonoBehaviour
@@ -14,6 +14,12 @@ public class EventoScript : MonoBehaviour
     public TextMeshProUGUI vencer;
     public Camera camFinal;
     public bool UmApenas = false;
+
+    [Header("Inimigo")]
+    public Transform SpawnX;
+    public Transform SpawnY;
+    public GameObject Morcego;
+    private float count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,8 +76,16 @@ public class EventoScript : MonoBehaviour
         if(jog.Count < 1)
         {
             var primeiro = Vencedor(placar);
-            vencer.text = primeiro.Key + " OBTEVE: " + primeiro.Value + "pts E GANHOU!!";
+            vencer.text = primeiro.Key + " OBTEVE: " + primeiro.Value + " PONTOS E GANHOU!!";
             camFinal.gameObject.SetActive(true);
+        }
+
+        Vector3 posSpawn = new Vector3(Random.Range(-40f, SpawnX.position.x), Random.Range(0f, SpawnY.position.y));
+        count += 1*Time.deltaTime;
+        if(count >= 10)
+        {
+            Instantiate(Morcego, posSpawn, Quaternion.identity);
+            count = 0;
         }
     }
 

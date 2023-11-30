@@ -10,6 +10,7 @@ public class Monstro : MonoBehaviour
     public int Vida;
     public int Pontos;
     public bool chefao;
+    public bool Voador;
     public Transform Player;
     public Transform groundCheck;
     public Transform paredeCheck;
@@ -107,7 +108,7 @@ public class Monstro : MonoBehaviour
                 }
             }
 
-            if(Player.position.y > pos.position.y + 2 && chaoCol())
+            if(Player.position.y > pos.position.y + 2 && chaoCol() && !Voador)
             {
                 rig.velocity = new Vector2(rig.velocity.x, 10f);
             }
