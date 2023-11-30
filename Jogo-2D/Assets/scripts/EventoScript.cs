@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class EventoScript : MonoBehaviour
@@ -8,6 +10,9 @@ public class EventoScript : MonoBehaviour
     public Dictionary<string, float> placar = new Dictionary<string, float>();
     public List<GameObject> jog = new List<GameObject>();
     public GameObject[] Players;
+    public Vector3 podio;
+    public TextMeshProUGUI vencer;
+    public Camera camFinal;
     public bool UmApenas = false;
     // Start is called before the first frame update
     void Start()
@@ -65,7 +70,8 @@ public class EventoScript : MonoBehaviour
         if(jog.Count < 1)
         {
             var primeiro = Vencedor(placar);
-            Debug.Log(primeiro.Key);
+            vencer.text = primeiro.Key + " OBTEVE: " + primeiro.Value + "pts E GANHOU!!";
+            camFinal.gameObject.SetActive(true);
         }
     }
 
