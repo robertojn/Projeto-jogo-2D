@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ec3733f790871f4aad73b48bf2eb4b0
+guid: 422383be86991ac45a736c2876c686a4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,24 +119,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: golem cristal_0
+      name: golem_cristal_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 655ec1311954d9e488b083c552f37ba6
-      internalID: -1941405270
+      spriteID: 11d5674a82b01214a8649dbd0bf80c78
+      internalID: 1394146191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem cristal_1
+      name: golem_cristal_1
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 0
-        width: 44
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46145078d1c556b488bd81204436bea2
-      internalID: 962805917
+      spriteID: 3ddcf6ad2cfc7c144a49b74dcf7bf190
+      internalID: 818151981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem cristal_2
+      name: golem_cristal_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,17 +179,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6cce3c2a9460cc4487e26813e6ee364
-      internalID: 1041669044
+      spriteID: b3dcb3293dce82549bd17ad81f860239
+      internalID: 1048224304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem cristal_3
+      name: golem_cristal_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 194
         y: 0
         width: 47
         height: 64
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cc0ac9e8ab84f44bbfca0c7ea2a14f9
-      internalID: 338367762
+      spriteID: 49f7828b58c2d424c906190a3968e2bc
+      internalID: -1613210162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem cristal_4
+      name: golem_cristal_4
       rect:
         serializedVersion: 2
         x: 256
@@ -221,8 +221,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38c3c49579c9dbd49a0ef5216b3eecf2
-      internalID: -756523341
+      spriteID: 0cfcae00ca45efe4ea232a5cd5b94e7e
+      internalID: -2020248073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golem_cristal_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7fc4d8c1088834cb848b858ed12cf8
+      internalID: -1377011946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golem_cristal_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e777cc409f0fcd5409e2f66d8ee683e6
+      internalID: -158113713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golem_cristal_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee98e192e5fd5c4d918b05758d2ac26
+      internalID: -1337317041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golem_cristal_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 47
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670a94db6a859824791bc7dbb02f5b1f
+      internalID: -1690220632
       vertices: []
       indices: 
       edges: []
@@ -238,11 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      golem cristal_0: -1941405270
-      golem cristal_1: 962805917
-      golem cristal_2: 1041669044
-      golem cristal_3: 338367762
-      golem cristal_4: -756523341
+      golem_cristal_0: 1394146191
+      golem_cristal_1: 818151981
+      golem_cristal_2: 1048224304
+      golem_cristal_3: -1613210162
+      golem_cristal_4: -2020248073
+      golem_cristal_5: -1377011946
+      golem_cristal_6: -158113713
+      golem_cristal_7: -1337317041
+      golem_cristal_8: -1690220632
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

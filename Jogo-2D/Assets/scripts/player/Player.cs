@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Score.text = "Score: " + dinheiro + "g";
+        Score.text = "Score: " + dinheiro;
 
         if(Input.GetKeyDown(controles[0]) && PodePular)
         {
@@ -215,6 +215,7 @@ public class Player : MonoBehaviour
     public void perderVida(int Dano)
     {
         Vida -= Dano;
+        StartCoroutine(TempoDano());
         if(Vida <= 0)
         {
             Destroy(gameObject);
@@ -231,6 +232,30 @@ public class Player : MonoBehaviour
         if(col.gameObject.tag == "efeito")
         {
             perderDinheiro(50);
+            int dano = col.GetComponent<efeito>().dan;
+            perderVida(dano);
+
+            if(flip.flipX == true)
+            {
+                rig.AddForce(new Vector2(rig.velocity.x - 200,rig.velocity.y));
+                
+            }else 
+            {
+                rig.AddForce(new Vector2(rig.velocity.x + 200,rig.velocity.y));
+            }
         }
+    }
+
+    void OnDestroy()
+    {
+        cam.transform.SetParent(null);
+        cam.AddComponent<CameraMorte>();
+    }
+
+    private IEnumerator TempoDano()
+    {
+        flip.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        flip.color = Color.white;
     }
 }

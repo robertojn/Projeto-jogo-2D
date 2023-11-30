@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5303381747915414383}
   - component: {fileID: 4638514742435450436}
   - component: {fileID: -8007644854896766485}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EfeitoGolpe
   m_TagString: efeito
   m_Icon: {fileID: 0}
@@ -75,10 +75,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1313474874, guid: cce7d0e25204f084cba0694b12c4e25b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.34375, y: 0.4375}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e3fd632cc1ba44291210ca1f72f21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dan: 10
 --- !u!95 &4638514742435450436
 Animator:
   serializedVersion: 5
