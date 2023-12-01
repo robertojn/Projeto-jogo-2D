@@ -17,6 +17,8 @@ public class Monstro : MonoBehaviour
     public LayerMask LayerParede;
     public CapsuleCollider2D col;
     public GameObject Efeito;
+    public Vector2 DistanciaVerDir;
+    public Vector2 DistanciaVerEsq;
 
     private Transform pos;
     private SpriteRenderer skin;
@@ -26,6 +28,9 @@ public class Monstro : MonoBehaviour
     private float TempoVer = 5f;
     private float count = 0;
     private bool Atacou = false;
+    private GameObject[] Jogadores; 
+    public bool PosXP;
+    public bool PosXN;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +38,17 @@ public class Monstro : MonoBehaviour
         skin = GetComponent<SpriteRenderer>();
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        Jogadores = GameObject.FindGameObjectsWithTag("player");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Voador && Player == null)
+        {
+            Player = Jogadores[Random.Range(0, Jogadores.Length)].transform;
+        }
+
         if(!Vendo && chefao)
         {
             float x = transform.position.x;
@@ -67,26 +78,50 @@ public class Monstro : MonoBehaviour
             anim.SetBool("Bater", false);
         }
         
-        if(skin.flipX == false)
+        if(skin.flipX == false && col != null)
         {
-            col.offset = new Vector2(3.8f, 0.7f);
-        } else {
-            col.offset = new Vector2(-3.8f, 0.7f);
+            col.offset = DistanciaVerDir;
+        } 
+        else if(col != null)
+        {
+            col.offset = DistanciaVerEsq;
         }
 
         if(Player != null)
         {
-            if(Player.position.x > pos.position.x)
+            if(Voador)
+            {
+                PosXP = Player.position.x > pos.position.x + 0.5f;
+                PosXN = Player.position.x < pos.position.x - 0.5f;
+            } else {
+                PosXP = Player.position.x > pos.position.x;
+                PosXN = Player.position.x < pos.position.x;
+            }
+
+            if(PosXP)
             {
                 float x = pos.position.x;
                 x += 2 * Time.deltaTime;
                 transform.position = new Vector2(x, pos.position.y);
                 skin.flipX = false;
-            } else {
+            } 
+            else if(PosXN)
+            {
                 float x = pos.position.x;
                 x -= 2 * Time.deltaTime;
                 transform.position = new Vector2(x, pos.position.y);
                 skin.flipX = true;
+            }
+
+            if(Player.position.y > pos.position.y && Voador)
+            {
+                float y = pos.position.y;
+                y += 2 * Time.deltaTime;
+                transform.position = new Vector2(pos.position.x, y);
+            } else {
+                float y = pos.position.y;
+                y -= 2 * Time.deltaTime;
+                transform.position = new Vector2(pos.position.x, y);
             }
 
             float distancia = Vector3.Distance(Player.position, pos.position);
@@ -120,7 +155,7 @@ public class Monstro : MonoBehaviour
             count += 1 * Time.deltaTime;
         }
 
-        if(count >= TempoVer)
+        if(count >= TempoVer && !Voador)
         {
             Player = null;
             count = TempoVer;
@@ -135,11 +170,21 @@ public class Monstro : MonoBehaviour
 
     private bool chaoCol()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, LayerParede);
+        if(groundCheck != null)
+        {
+            return Physics2D.OverlapCircle(groundCheck.position, 0.1f, LayerParede);
+        } else {
+            return false;
+        }
     }
     private bool ParedeCol()
     {
-        return Physics2D.OverlapCircle(paredeCheck.position, 2f, LayerParede);
+        if(paredeCheck != null)
+        {
+            return Physics2D.OverlapCircle(paredeCheck.position, 3f, LayerParede);
+        } else {
+            return false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D colide)
@@ -148,6 +193,7 @@ public class Monstro : MonoBehaviour
         {
             Player = colide.GetComponent<Transform>();
             Vendo = true;
+            anim.SetBool("Alerta", true);
         } 
         else if(colide.gameObject.tag == "efeito")
         {
