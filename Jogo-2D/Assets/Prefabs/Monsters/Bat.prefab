@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Vida: 20
   Pontos: 50
-  DistanciaFlip: 0
+  DistanciaFlip: 0.5
   DistanciaAtaque: 0.5
   chefao: 0
   Voador: 1

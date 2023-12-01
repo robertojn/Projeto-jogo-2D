@@ -9,11 +9,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
+    public GameObject Menu;
     [SerializeField] private string NomeDoJogo;
     [SerializeField] private GameObject painelCreditos;
     [SerializeField] private GameObject MenuInicial;
    public void Jogar()
     {
+        Menu.SetActive(false);
         SceneManager.LoadScene(NomeDoJogo);
     }
 

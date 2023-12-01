@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using TMPro.Examples;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EventoScript : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class EventoScript : MonoBehaviour
     public GameObject[] Players;
     public Vector3 podio;
     public TextMeshProUGUI vencer;
-    public Camera camFinal;
+    public GameObject camVencedor;
+    public GameObject camGameOver;
+    public ParticleSystem particulas;
     public bool UmApenas = false;
 
     [Header("Inimigo")]
@@ -75,25 +78,42 @@ public class EventoScript : MonoBehaviour
 
         if(jog.Count < 1)
         {
-            var primeiro = Vencedor(placar);
-            vencer.text = primeiro.Key + " OBTEVE: " + primeiro.Value + " PONTOS E GANHOU!!";
-            camFinal.gameObject.SetActive(true);
+            var vencedor = Vencedor(placar);
+            if(vencedor.HasValue)
+            {
+                vencer.text = vencedor.Value.Key + " OBTEVE: " + vencedor.Value.Value + " PONTOS E GANHOU!!";
+                camVencedor.gameObject.SetActive(true);
+            } else {
+                camGameOver.gameObject.SetActive(true);
+                particulas.Play();
+            }
         }
 
         Vector3 posSpawn = new Vector3(Random.Range(-40f, SpawnX.position.x), Random.Range(0f, SpawnY.position.y));
         count += 1*Time.deltaTime;
         if(count >= 10)
         {
-            //GameObject mor = Instantiate(Morcego, posSpawn, Quaternion.identity);
-            //mor.transform.SetParent(GameObject.Find("Inimigos").transform);
+            GameObject mor = Instantiate(Morcego, posSpawn, Quaternion.identity);
+            mor.transform.SetParent(GameObject.Find("Inimigos").transform);
             count = 0;
         }
     }
 
-     static KeyValuePair<string, float> Vencedor(Dictionary<string, float> placar)
+     static KeyValuePair<string, float>? Vencedor(Dictionary<string, float> placar)
     {
         var Jogadores = placar.OrderByDescending(x => x.Value);
-        var primeiro = Jogadores.First();
-        return primeiro;
+
+        if(Jogadores.Any())
+        {
+            var primeiro = Jogadores.First();
+            return primeiro;
+        } else {
+            return null;
+        }
+    }
+
+    public void Reiniciar()
+    {
+        SceneManager.LoadScene("Jogo");
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
@@ -44,16 +45,16 @@ public class Monstro : MonoBehaviour
         box = GetComponent<BoxCollider2D>();
         Jogadores = GameObject.FindGameObjectsWithTag("player");
 
-        if(chefao)
+        /*if(chefao)
         {
             box.gameObject.layer = LayerMask.NameToLayer("parede");
-        }
+        }*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Voador && Player == null)
+        if(Voador && Player == null && !Jogadores.All(x => x == null))
         {
             Player = Jogadores[Random.Range(0, Jogadores.Length)].transform;
         }
@@ -186,6 +187,24 @@ public class Monstro : MonoBehaviour
             return Physics2D.OverlapCircle(paredeCheck.position, 3f, LayerParede);
         } else {
             return false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D colide)
+    {
+        if(colide.gameObject.tag == "efeito" && !colide.transform.IsChildOf(gameObject.transform))
+        {
+            int dano = colide.gameObject.GetComponent<efeito>().dan;
+            perderVida(dano);
+            StartCoroutine(receberDano());
+            Destroy(colide.gameObject);
+
+            if(Vida <= 0)
+            {
+                Player script = colide.transform.GetComponentInParent<Player>();
+                script.addDinheiro(Pontos);
+                Destroy(gameObject);
+            }
         }
     }
 

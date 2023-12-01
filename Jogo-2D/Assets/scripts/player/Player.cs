@@ -28,9 +28,11 @@ public class Player : MonoBehaviour
     private bool PodePular = true;
     private bool dançando = false;
     private bool PodeJogar = false;
+    private bool Atacou;
     private float forçaG = 10;
     public float Jogar = 0;
-    private float TempoJogar = 0;
+    public float TempoJogar = 0;
+    private float TempoAtaque = 0;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -69,17 +71,31 @@ public class Player : MonoBehaviour
             GameObject Picareta = Instantiate(Pica, transform.position, Quaternion.identity); 
             Rigidbody2D rigPica = Picareta.GetComponent<Rigidbody2D>();
 
+            Physics2D.IgnoreCollision(Picareta.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
+            Picareta.transform.SetParent(gameObject.transform);
             rigPica.AddForce(new Vector2(forçaG, 2*Jogar), ForceMode2D.Impulse);
             anim.SetBool("Jogou", false);
             PodeJogar = false;
             Jogar = 0;
         }
 
-        if(Input.GetKeyDown(controles[1]))
+        
+        if(Input.GetKey(controles[1]) && !Atacou && TempoJogar <= 1)
         {
             anim.SetBool("Golpe", true);
+            Atacou = true;
+            Jogar = 0;
         } else {
             anim.SetBool("Golpe", false);
+        }
+
+        if(Atacou)
+        {
+            TempoAtaque += Time.deltaTime;
+            if(TempoAtaque >= 1)
+            {
+                Atacou = false;
+            }
         }
 
         if(Input.GetKeyDown(controles[2]))
@@ -231,7 +247,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "efeito")
+        if(col.gameObject.tag == "efeito" && !col.transform.IsChildOf(gameObject.transform))
         {
             perderDinheiro(50);
             int dano = col.GetComponent<efeito>().dan;
@@ -245,6 +261,16 @@ public class Player : MonoBehaviour
             {
                 rig.AddForce(new Vector2(rig.velocity.x + 200,rig.velocity.y));
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "efeito" && !col.transform.IsChildOf(gameObject.transform))
+        {
+            perderDinheiro(50);
+            int dano = col.gameObject.GetComponent<efeito>().dan;
+            perderVida(dano);
         }
     }
 
