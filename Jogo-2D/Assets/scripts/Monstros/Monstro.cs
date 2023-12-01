@@ -231,6 +231,10 @@ public class Monstro : MonoBehaviour
 
             if(Vida <= 0)
             {
+                if(chefao)
+                {
+                    Instantiate(bauChefe, new Vector3(colide.transform.position.x, colide.transform.position.y + 0.1f), Quaternion.identity);
+                }
                 Player script = colide.GetComponentInParent<Player>();
                 script.addDinheiro(Pontos);
                 Destroy(gameObject);
