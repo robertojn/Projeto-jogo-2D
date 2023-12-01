@@ -9,6 +9,8 @@ public class Monstro : MonoBehaviour
 {
     public int Vida;
     public int Pontos;
+    public float DistanciaFlip;
+    public float DistanciaAtaque;
     public bool chefao;
     public bool Voador;
     public Transform Player;
@@ -19,6 +21,8 @@ public class Monstro : MonoBehaviour
     public GameObject Efeito;
     public Vector2 DistanciaVerDir;
     public Vector2 DistanciaVerEsq;
+    public Vector3 EfeitoDir;
+    public Vector3 EfeitoEsq;
 
     private Transform pos;
     private SpriteRenderer skin;
@@ -29,8 +33,6 @@ public class Monstro : MonoBehaviour
     private float count = 0;
     private bool Atacou = false;
     private GameObject[] Jogadores; 
-    public bool PosXP;
-    public bool PosXN;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,10 +68,8 @@ public class Monstro : MonoBehaviour
             if(skin.flipX)
             {
                 skin.flipX = false;
-                //paredeCheck.position = new Vector3(0.4f, paredeCheck.position.y);
             } else {
                 skin.flipX = true;
-                //paredeCheck.position = new Vector3(-0.4f, paredeCheck.position.y);
             }
         }
 
@@ -89,23 +89,14 @@ public class Monstro : MonoBehaviour
 
         if(Player != null)
         {
-            if(Voador)
-            {
-                PosXP = Player.position.x > pos.position.x + 0.5f;
-                PosXN = Player.position.x < pos.position.x - 0.5f;
-            } else {
-                PosXP = Player.position.x > pos.position.x;
-                PosXN = Player.position.x < pos.position.x;
-            }
-
-            if(PosXP)
+            if(Player.position.x > pos.position.x + DistanciaFlip)
             {
                 float x = pos.position.x;
                 x += 2 * Time.deltaTime;
                 transform.position = new Vector2(x, pos.position.y);
                 skin.flipX = false;
             } 
-            else if(PosXN)
+            else if(Player.position.x < pos.position.x - DistanciaFlip)
             {
                 float x = pos.position.x;
                 x -= 2 * Time.deltaTime;
@@ -125,18 +116,22 @@ public class Monstro : MonoBehaviour
             }
 
             float distancia = Vector3.Distance(Player.position, pos.position);
-            if(distancia < 0.5 && !Atacou)
+            if(chefao)
+            {
+                Debug.Log(distancia);
+            }
+            if(distancia < DistanciaAtaque && !Atacou)
             {
                 if(skin.flipX == false)
                 {
                 Efeito.GetComponent<SpriteRenderer>().flipX = true;
-                GameObject golpe = Instantiate(Efeito, transform.position + new Vector3(0.5f,-0.1f,0), Quaternion.identity);
+                GameObject golpe = Instantiate(Efeito, transform.position + EfeitoDir, Quaternion.identity);
                 golpe.transform.SetParent(gameObject.transform);
                 Atacou = true;
                 StartCoroutine(tempoAtacar());
                 } else {
                 Efeito.GetComponent<SpriteRenderer>().flipX = false;
-                GameObject golpe = Instantiate(Efeito, transform.position - new Vector3(0.5f,+0.1f,0), Quaternion.identity);
+                GameObject golpe = Instantiate(Efeito, transform.position - new Vector3(EfeitoDir.x, -EfeitoDir.y), Quaternion.identity);
                 golpe.transform.SetParent(gameObject.transform);
                 Atacou = true;
                 StartCoroutine(tempoAtacar());
