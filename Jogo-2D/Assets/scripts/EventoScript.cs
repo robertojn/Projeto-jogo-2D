@@ -84,7 +84,8 @@ public class EventoScript : MonoBehaviour
         count += 1*Time.deltaTime;
         if(count >= 10)
         {
-            Instantiate(Morcego, posSpawn, Quaternion.identity);
+            GameObject mor = Instantiate(Morcego, posSpawn, Quaternion.identity);
+            mor.transform.SetParent(GameObject.Find("Inimigos").transform);
             count = 0;
         }
     }
