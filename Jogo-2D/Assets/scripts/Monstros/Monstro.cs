@@ -27,6 +27,7 @@ public class Monstro : MonoBehaviour
     private Transform pos;
     private SpriteRenderer skin;
     private Rigidbody2D rig;
+    private BoxCollider2D box;
     private Animator anim;
     private bool Vendo = false;
     private float TempoVer = 5f;
@@ -40,7 +41,13 @@ public class Monstro : MonoBehaviour
         skin = GetComponent<SpriteRenderer>();
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        box = GetComponent<BoxCollider2D>();
         Jogadores = GameObject.FindGameObjectsWithTag("player");
+
+        if(chefao)
+        {
+            box.gameObject.layer = LayerMask.NameToLayer("parede");
+        }
     }
 
     // Update is called once per frame
