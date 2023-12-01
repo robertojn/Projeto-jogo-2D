@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Vida: 20
   Pontos: 50
+  DistanciaFlip: 0
+  DistanciaAtaque: 0.5
   chefao: 0
   Voador: 1
   Player: {fileID: 0}
@@ -112,6 +114,10 @@ MonoBehaviour:
     m_Bits: 128
   col: {fileID: 0}
   Efeito: {fileID: 1182778168333737714, guid: b4c8bdc568de4a340bb6729640bf6baf, type: 3}
+  DistanciaVerDir: {x: 0, y: 0}
+  DistanciaVerEsq: {x: 0, y: 0}
+  EfeitoDir: {x: 0.5, y: -0.1, z: 0}
+  EfeitoEsq: {x: 0, y: 0, z: 0}
 --- !u!95 &601061375532531829
 Animator:
   serializedVersion: 5
