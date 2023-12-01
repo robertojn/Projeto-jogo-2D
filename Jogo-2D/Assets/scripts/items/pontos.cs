@@ -5,10 +5,11 @@ using UnityEngine;
 public class pontos : MonoBehaviour
 {
     public int Pontos;
+    AudioManager audioM;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioM = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class pontos : MonoBehaviour
                 Transform Posi = col.GetComponentInParent<Transform>();
                 SpriteRenderer personagem = col.GetComponentInParent<SpriteRenderer>();
 
+                audioM.TocarSom(audioM.SFXs[0]);
                 if(personagem.flipX == true)
                 {
                 Rig.AddForce(new Vector2(Posi.position.x-100,Posi.position.y));

@@ -20,6 +20,7 @@ public class Monstro : MonoBehaviour
     public LayerMask LayerParede;
     public CapsuleCollider2D col;
     public GameObject Efeito;
+    public GameObject bauChefe;
     public Vector2 DistanciaVerDir;
     public Vector2 DistanciaVerEsq;
     public Vector3 EfeitoDir;
@@ -44,11 +45,6 @@ public class Monstro : MonoBehaviour
         anim = GetComponent<Animator>();
         box = GetComponent<BoxCollider2D>();
         Jogadores = GameObject.FindGameObjectsWithTag("player");
-
-        /*if(chefao)
-        {
-            box.gameObject.layer = LayerMask.NameToLayer("parede");
-        }*/
     }
 
     // Update is called once per frame

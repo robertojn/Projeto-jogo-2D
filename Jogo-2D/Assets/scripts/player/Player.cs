@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     private bool dançando = false;
     private bool PodeJogar = false;
     private bool Atacou;
+    private int VidaInteira;
     private float forçaG = 10;
     public float Jogar = 0;
     public float TempoJogar = 0;
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         flip = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        VidaInteira = Vida;
     }
 
     // Update is called once per frame
@@ -240,6 +242,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void GanharVida(int vida)
+    {
+        Vida -= vida;
+    }
+
     public void perderDinheiro(int quantidade)
     {
         dinheiro -= quantidade;
@@ -253,13 +260,13 @@ public class Player : MonoBehaviour
             int dano = col.GetComponent<efeito>().dan;
             perderVida(dano);
 
-            if(flip.flipX == true)
+            if(col.GetComponent<SpriteRenderer>().flipX == true)
             {
-                rig.AddForce(new Vector2(rig.velocity.x - 200,rig.velocity.y));
+                rig.AddForce(new Vector2(rig.velocity.x + 200,rig.velocity.y));
                 
             }else 
             {
-                rig.AddForce(new Vector2(rig.velocity.x + 200,rig.velocity.y));
+                rig.AddForce(new Vector2(rig.velocity.x - 200,rig.velocity.y));
             }
         }
     }
@@ -271,6 +278,15 @@ public class Player : MonoBehaviour
             perderDinheiro(50);
             int dano = col.gameObject.GetComponent<efeito>().dan;
             perderVida(dano);
+        }
+
+        if(col.gameObject.tag == "cura")
+        {
+            if(Vida < VidaInteira)
+            {
+                GanharVida(10);
+                Destroy(col.gameObject);
+            }
         }
     }
 

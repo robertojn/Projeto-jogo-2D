@@ -12,6 +12,7 @@ public class MenuPrincipal : MonoBehaviour
     public GameObject Menu;
     [SerializeField] private string NomeDoJogo;
     [SerializeField] private GameObject painelCreditos;
+    [SerializeField] private GameObject Creditos2;
     [SerializeField] private GameObject MenuInicial;
    public void Jogar()
     {
@@ -29,6 +30,17 @@ public class MenuPrincipal : MonoBehaviour
     {
         painelCreditos.SetActive(false);
         MenuInicial.SetActive(true);
+    }
+
+    public void ProxCreditos()
+    {
+        Creditos2.SetActive(true);
+        painelCreditos.SetActive(false);
+    }
+    public void ProxCreditosVoltar()
+    {
+        Creditos2.SetActive(false);
+        painelCreditos.SetActive(true);
     }
 
     public void Sair()

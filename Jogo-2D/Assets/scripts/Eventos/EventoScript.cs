@@ -85,7 +85,6 @@ public class EventoScript : MonoBehaviour
                 camVencedor.gameObject.SetActive(true);
             } else {
                 camGameOver.gameObject.SetActive(true);
-                particulas.Play();
             }
         }
 
@@ -115,5 +114,6 @@ public class EventoScript : MonoBehaviour
     public void Reiniciar()
     {
         SceneManager.LoadScene("Jogo");
+        camGameOver.gameObject.SetActive(false);
     }
 }
