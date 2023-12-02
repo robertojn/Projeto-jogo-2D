@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor.U2D.Aseprite;
+#endif
 using UnityEngine;
 using UnityEngine.UIElements;
 

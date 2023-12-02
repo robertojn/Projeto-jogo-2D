@@ -238,7 +238,7 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             cam.transform.SetParent(null);
-            cam.AddComponent<CameraMorte>();
+            cam.gameObject.AddComponent<CameraMorte>();
         }
     }
 

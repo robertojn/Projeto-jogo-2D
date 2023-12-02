@@ -21,10 +21,9 @@ public class AddComp : MonoBehaviour
 
        foreach(Transform cris in cristais)
        {
-            cris.AddComponent<BoxCollider2D>().isTrigger = true;
-            cris.AddComponent<pontos>();
-            cris.AddComponent<Light2D>();
-
+            cris.gameObject.AddComponent<BoxCollider2D>().isTrigger = true;
+            cris.gameObject.AddComponent<pontos>();
+           
             SpriteRenderer cristalSprite = cris.GetComponent<SpriteRenderer>();
             
             if(cristalSprite.sprite.name == "Cristais_0")
