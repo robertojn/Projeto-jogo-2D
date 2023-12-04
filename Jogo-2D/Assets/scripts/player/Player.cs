@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int Vida;
     public float count = 0;
     public float speed;
+    public float VelParede;
     public float pulo;
     public float TempoAnim;
     public float dinheiro = 500;
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
     private float forçaG = 10;
     public float Jogar = 0;
     public float TempoJogar = 0;
-    private float TempoAtaque = 0;
+    private float TempoAtaque = 1;
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -82,7 +83,7 @@ public class Player : MonoBehaviour
         }
 
         
-        if(Input.GetKey(controles[1]) && !Atacou && TempoJogar <= 1)
+        if(Input.GetKeyDown(controles[1]) && !Atacou && TempoJogar <= 1)
         {
             anim.SetBool("Golpe", true);
             Atacou = true;
@@ -97,6 +98,18 @@ public class Player : MonoBehaviour
             if(TempoAtaque >= 1)
             {
                 Atacou = false;
+            }
+
+            if(flip.flipX)
+            {
+            efeitos[0].GetComponent<SpriteRenderer>().flipX = true;
+            GameObject golpe = Instantiate(efeitos[0], transform.position + new Vector3(0.4f,-0.1f,0), Quaternion.identity);
+            golpe.transform.SetParent(gameObject.transform);
+            }
+            else {
+            efeitos[0].GetComponent<SpriteRenderer>().flipX = false;
+            GameObject golpe = Instantiate(efeitos[0], transform.position - new Vector3(0.4f,+0.1f,0), Quaternion.identity);
+            golpe.transform.SetParent(gameObject.transform);
             }
         }
 
@@ -191,6 +204,7 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("Parede", true);
             PodePular = true;
+            rig.velocity = new Vector2(rig.velocity.x, Mathf.Clamp(rig.velocity.y, -VelParede, float.MaxValue));
         } else {
             anim.SetBool("Parede", false);
         }
@@ -213,17 +227,6 @@ public class Player : MonoBehaviour
 
     public void EfeitoGolpe()
     {
-        if(flip.flipX)
-        {
-            efeitos[0].GetComponent<SpriteRenderer>().flipX = true;
-            GameObject golpe = Instantiate(efeitos[0], transform.position + new Vector3(0.4f,-0.1f,0), Quaternion.identity);
-            golpe.transform.SetParent(gameObject.transform);
-        }
-        else {
-            efeitos[0].GetComponent<SpriteRenderer>().flipX = false;
-            GameObject golpe = Instantiate(efeitos[0], transform.position - new Vector3(0.4f,+0.1f,0), Quaternion.identity);
-            golpe.transform.SetParent(gameObject.transform);
-        }
     }
 
     public void addDinheiro(int pontos)
@@ -244,7 +247,7 @@ public class Player : MonoBehaviour
 
     public void GanharVida(int vida)
     {
-        Vida -= vida;
+        Vida += vida;
     }
 
     public void perderDinheiro(int quantidade)
@@ -269,6 +272,15 @@ public class Player : MonoBehaviour
                 rig.AddForce(new Vector2(rig.velocity.x - 200,rig.velocity.y));
             }
         }
+
+        if(col.gameObject.tag == "cura")
+        {
+            if(Vida < VidaInteira)
+            {
+                GanharVida(10);
+                Destroy(col.gameObject);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -278,15 +290,6 @@ public class Player : MonoBehaviour
             perderDinheiro(50);
             int dano = col.gameObject.GetComponent<efeito>().dan;
             perderVida(dano);
-        }
-
-        if(col.gameObject.tag == "cura")
-        {
-            if(Vida < VidaInteira)
-            {
-                GanharVida(10);
-                Destroy(col.gameObject);
-            }
         }
     }
 

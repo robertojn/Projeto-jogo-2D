@@ -37,7 +37,7 @@ public class Monstro : MonoBehaviour
     private float TempoVer = 5f;
     private float count = 0;
     private bool Atacou = false;
-    private GameObject[] Jogadores; 
+    private EventoScript eventos;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,16 +46,17 @@ public class Monstro : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         box = GetComponent<BoxCollider2D>();
-        Jogadores = GameObject.FindGameObjectsWithTag("player");
+        eventos = GameObject.Find("EventSystem").GetComponent<EventoScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Voador && Player == null && !Jogadores.All(x => x == null))
+        if(Voador && Player == null)
         {
-            Player = Jogadores[Random.Range(0, Jogadores.Length)].transform;
+            StartCoroutine(MudarAlvo());
         }
+        
 
         if(!Vendo && chefao)
         {
@@ -276,5 +277,14 @@ public class Monstro : MonoBehaviour
         skin.color = Color.red;
         yield return new WaitForSeconds(0.2f);
         skin.color = Color.white;
+    }
+
+    private IEnumerator MudarAlvo()
+    {
+        yield return new WaitForSeconds(1f);
+        if(eventos.jog.Count >= 1)
+        {
+            Player = eventos.jog[Random.Range(0, eventos.jog.Count - 1)].transform;
+        }
     }
 }

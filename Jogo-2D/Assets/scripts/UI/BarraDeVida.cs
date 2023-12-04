@@ -13,6 +13,7 @@ public class BarraDeVida : MonoBehaviour
 
     private int VidaAnterior;
     private int danoRecebido = 0;
+    private int vidaRecebida = 0;
     private int numero = 0;
     // Start is called before the first frame update
     void Start()
@@ -32,11 +33,19 @@ public class BarraDeVida : MonoBehaviour
         render.sprite = barras[numero];
 
         danoRecebido = VidaAnterior - scriptPlayer.Vida;
+        vidaRecebida = scriptPlayer.Vida - VidaAnterior;
 
         if(danoRecebido >= 10)
         {
             numero++;
             danoRecebido -= 10;
+            VidaAnterior = scriptPlayer.Vida;
+        }
+
+        if(vidaRecebida >= 10)
+        {
+            numero--;
+            vidaRecebida -= 10;
             VidaAnterior = scriptPlayer.Vida;
         }
     }
