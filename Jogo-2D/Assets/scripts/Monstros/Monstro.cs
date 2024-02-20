@@ -174,7 +174,7 @@ public class Monstro : MonoBehaviour
     {
         if(groundCheck != null)
         {
-            return Physics2D.OverlapCircle(groundCheck.position, 0.1f, LayerParede);
+            return Physics2D.OverlapCircle(groundCheck.position, 0.3f, LayerParede);
         } else {
             return false;
         }

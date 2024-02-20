@@ -19,7 +19,7 @@ public class Saida : MonoBehaviour
     {
         if(PodeSair && script != null)
         {
-            if(Input.GetKeyDown(script.controles[1]))
+            if(Input.GetKeyDown(script.controles["Bater"]))
             {
                 evento.placar.Add(script.gameObject.name, script.dinheiro);
                 Destroy(script.gameObject);

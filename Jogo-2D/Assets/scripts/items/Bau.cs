@@ -40,7 +40,7 @@ public class Bau : MonoBehaviour
 
         if(PodePegar)
         {
-            if(Input.GetKeyDown(script.controles[1]))
+            if(Input.GetKeyDown(script.controles["Bater"]))
             {
                 if(skin.sprite == sprites[0])
                 {

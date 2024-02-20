@@ -34,9 +34,30 @@ public class EventoScript : MonoBehaviour
     {
         foreach(GameObject jogadores in Players)
         {
+            Player script = jogadores.GetComponent<Player>();
+            EventUI UIScript = GetComponent<EventUI>();
             if(!jog.Contains(jogadores))
             {
                 jog.Add(jogadores);
+            }
+
+            if(script.controles.Count < 3)
+            {
+                if(script.player == 1)
+                {
+                    script.controles.Add("Pular", KeyCode.Space);
+                    UIScript.botões[0].text = script.controles["Pular"].ToString();
+                    script.controles.Add("Bater", KeyCode.G);
+                    UIScript.botões[1].text = script.controles["Bater"].ToString();
+                    script.controles.Add("Dançar", KeyCode.Alpha1);
+                    UIScript.botões[2].text = script.controles["Dançar"].ToString();
+                } 
+                else if(script.player == 2)
+                {
+                    script.controles.Add("Pular", KeyCode.Keypad1);
+                    script.controles.Add("Bater", KeyCode.Keypad2);
+                    script.controles.Add("Dançar", KeyCode.Keypad3);
+                }
             }
         }
 

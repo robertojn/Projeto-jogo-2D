@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public Transform ParedeCheck;
     public LayerMask LayerParede;
     public TextMeshProUGUI Score;
-    public KeyCode[] controles;
+    public Dictionary<string, KeyCode> controles = new Dictionary<string, KeyCode>();
     public GameObject[] efeitos;
     public Camera cam;
 
@@ -49,12 +49,12 @@ public class Player : MonoBehaviour
     {
         Score.text = "Score: " + dinheiro;
 
-        if(Input.GetKeyDown(controles[0]) && PodePular)
+        if(Input.GetKeyDown(controles["Pular"]) && PodePular)
         {
             rig.velocity = new Vector2(rig.velocity.x, pulo);
         }
 
-        if(Input.GetKey(controles[1]))
+        if(Input.GetKey(controles["Bater"]))
         {
             TempoJogar += 2 * Time.deltaTime;
             Jogar += 2*Time.deltaTime;
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
             TempoJogar = 0;
         }
 
-        if(Input.GetKeyUp(controles[1]) && PodeJogar)
+        if(Input.GetKeyUp(controles["Bater"]) && PodeJogar)
         {
             GameObject Picareta = Instantiate(Pica, transform.position, Quaternion.identity); 
             Rigidbody2D rigPica = Picareta.GetComponent<Rigidbody2D>();
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         }
 
         
-        if(Input.GetKeyDown(controles[1]) && !Atacou && TempoJogar <= 1)
+        if(Input.GetKeyDown(controles["Bater"]) && !Atacou && TempoJogar <= 1)
         {
             anim.SetBool("Golpe", true);
             Atacou = true;
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(controles[2]))
+        if(Input.GetKeyDown(controles["Dançar"]))
         {
             anim.SetBool("Dance", true);
             dançando = true;
